@@ -1,14 +1,14 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const proxy = {
+/*const proxy = {
   host: "http://lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu@la.residential.rayobyte.com:8000",
   port: 8000,
-  /*auth: {
+  auth: {
     username: "lindafisher0252_gmail_com",
     password: "k2iaWLJ2xJDAJVu",
-  },*/
-};
+  },
+};*/
 
 const proxyList = [
   { ip: 'lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu-session-2bf09368@la.residential.rayobyte.com', port: '8000' },
