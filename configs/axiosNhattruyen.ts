@@ -10,10 +10,19 @@ import queryString from "query-string";
   },
 };*/
 
-console.log(process.env.http_proxy);
+    
 const axiosNhattruyen = axios.create({
   baseURL: "https://nhattruyenplus.com",
-  //proxy: rotateProxy(),
+  proxy: {
+    useHttpProxy: true,
+    host: process.env.PROXY_HOST,
+    port: process.env.PROXY_PORT,
+    auth: {
+      username: process.env.PROXY_USERNAME,
+      password: process.env.PROXY_PASSWORD,
+    },
+  },
 });
+
 export default axiosNhattruyen;
 
