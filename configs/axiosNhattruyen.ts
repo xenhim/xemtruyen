@@ -1,21 +1,12 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const axiosNhattruyen = axios.create({
-  baseURL: "https://worker-weathered-wave-3e1f.xemining.workers.dev"
-});
-// dwwadwdddfdds
-axiosNhattruyen.interceptors.request.use(
-  async (config) => {
-    if (!config.params) return { ...config, url: `${config.url}` };
-    const strParams = queryString.stringify(config.params);
-    delete config.params;
-    const customConfigs = { ...config, url: `?url=${config.url}?${strParams}` };
-    return customConfigs;
-  },
-  (err) => {
-    return Promise.reject(err);
-  }
-);
+const proxy = {
+  host: "lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu",
+  port: 8000,
+};
 
-export default axiosNhattruyen;
+const axiosNhattruyen = axios.create({
+  baseURL: "https://nhattruyenplus.com",
+  proxy: proxy,
+});
