@@ -62,7 +62,7 @@ function get_random_proxy(proxies: Proxy[]): Proxy {
 const proxy = get_random_proxy(proxies); // Pass the proxies array to the function
 
 const axiosNhattruyen = axios.create({
-  baseURL: "https://nhattruyenplus.com",
+  baseURL: "https://ipinfo.io/json",
   proxy: proxy,
 });
 
