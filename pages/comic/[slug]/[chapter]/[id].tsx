@@ -44,27 +44,27 @@ const ReadComicPage = ({ imageUrls, chapters, info }: ReadComicPageProps) => {
   const handleToggleFollow = () => {
     hasFollowed ? removeFollow(slug as string) : addFollow(slug as string);
   };
-  const handleSaveHistory = () => {
-    let history: IComicHistory[] = JSON.parse(localStorage.getItem(LocalStorage.history) || "[]");
-    let comic: IComicHistory = {} as IComicHistory;
-    let existComic = history.find((comic) => comic.slug === slug);
-    comic.id = id as string;
-    comic.slug = slug as string;
-    comic.title = info.title;
-    comic.chapterName = info.chapter;
-    comic.posterUrl = info.posterUrl;
-    comic.chapterUrl = `${slug}/${chapter}/${id}`;
-    comic.chapters = [id as string];
-    if (existComic) {
-      const oldChapters = existComic.chapters;
-      const hasRead = oldChapters.includes(id as string);
-      comic.chapters = hasRead ? oldChapters : [...oldChapters, id as string];
-      history = history.filter((comic: IComicHistory) => comic.slug !== slug);
-    }
-    history.unshift(comic);
-    if (history.length >= 30) history = history.slice(0, 30);
-    setHistory(history);
-  };
+const handleSaveHistory = useCallback(() => {
+  let history: IComicHistory[] = JSON.parse(localStorage.getItem(LocalStorage.history) || "[]");
+  let comic: IComicHistory = {} as IComicHistory;
+  let existComic = history.find((comic) => comic.slug === slug);
+  comic.id = id as string;
+  comic.slug = slug as string;
+  comic.title = info.title;
+  comic.chapterName = info.chapter;
+  comic.posterUrl = info.posterUrl;
+  comic.chapterUrl = `${slug}/${chapter}/${id}`;
+  comic.chapters = [id as string];
+  if (existComic) {
+    const oldChapters = existComic.chapters;
+    const hasRead = oldChapters.includes(id as string);
+    comic.chapters = hasRead ? oldChapters : [...oldChapters, id as string];
+    history = history.filter((comic: IComicHistory) => comic.slug !== slug);
+  }
+  history.unshift(comic);
+  if (history.length >= 30) history = history.slice(0, 30);
+  setHistory(history);
+}, [slug, chapter, id]);
 
   const handleLevelUp = async () => {
     try {
@@ -78,7 +78,7 @@ const ReadComicPage = ({ imageUrls, chapters, info }: ReadComicPageProps) => {
 
 useEffect(() => {
   handleSaveHistory();
-}, [handleSaveHistory, slug, chapter, id]);
+}, []);
 
   
   const currentChapter = chapters.findIndex((chapter) => chapter.id === router.query.id);
