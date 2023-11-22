@@ -17,19 +17,18 @@ const FollowPage = () => {
   const { history, follows, removeFollow } = useGlobalStore();
   const [loading, setLoading] = useState(true);
   const [comics, setComics] = useState<IComic[]>([]);
+useEffect(() => {
   const fetchFollow = async () => {
     setLoading(true);
     const comics = await Promise.all(
-      follows.map(
-        async (follow: string) => (await axios.get(`${server}/api/follow/${follow}`)).data.data
-      )
+      follows.map(async (follow: string) => (await axios.get(`${server}/api/follow/${follow}`)).data.data)
     );
     setComics(comics);
     setLoading(false);
   };
-  useEffect(() => {
-    fetchFollow();
-  }, [fetchFollow]);
+
+  fetchFollow();
+}, []);
   return (
     <>
       <Meta
