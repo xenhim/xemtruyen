@@ -2,12 +2,12 @@ import axios from "axios";
 import queryString from "query-string";
 
 const axiosNhattruyen = axios.create({
-  baseURL: "https://worker-weathered-wave-3e1f.xemining.workers.dev"
+  baseURL: "https://worker-weathered-wave-3e1f.xemining.workers.dev"+`?url=${config.url}`
 });
 // dwwadw
 axiosNhattruyen.interceptors.request.use(
   async (config) => {
-    if (!config.params) return { ...config, url: `?url=${config.url}` };
+    if (!config.params) return { ...config, url:  };
     const strParams = queryString.stringify(config.params);
     delete config.params;
     const customConfigs = { ...config, url: `?url=${config.url}?${strParams}` };
