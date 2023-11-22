@@ -68,7 +68,8 @@ useEffect(() => {
   };
 
   handleSaveHistory();
-}, [slug, chapter, id]);
+}, [slug, chapter, id, info.chapter, info.posterUrl, info.title, setHistory]);
+
 
 
   const handleLevelUp = async () => {
