@@ -76,7 +76,7 @@ const CommentPage = () => {
       <Meta
         title="Bình luận của tôi - NetComic"
         description="Danh sách bình luận của tôi tại NetComic"
-      />
+       />
       <ProtectedRoute>
         <LayoutUser>
           <Template title="Bình luận của tôi" desc="Danh sách bình luận của bạn">
