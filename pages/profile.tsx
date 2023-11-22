@@ -22,10 +22,10 @@ const ProfilePage = () => {
     avatar: defaultAvatar
   });
   const { onChange } = useInputChange(values, setValues);
-  useEffect(() => {
-    if (!currentUser) return;
-    setValues({ ...values, ...currentUser });
-  }, [currentUser]);
+useEffect(() => {
+  if (!currentUser) return;
+  setValues({ ...values, ...currentUser });
+}, [currentUser, values]);
   return (
     <>
       <Meta title="Thông tin chung - NetComic" description="Thông tin chung" />
