@@ -29,7 +29,7 @@ const FollowPage = () => {
   };
   useEffect(() => {
     fetchFollow();
-  }, [follows]);
+  }, [fetchFollow]);
   return (
     <>
       <Meta
