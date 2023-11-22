@@ -2,9 +2,9 @@ import axios from "axios";
 import queryString from "query-string";
 
 const proxy = {
-  host: "http://lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu@la.residential.rayobyte.com:8000",
-  /*port: 8000,
-  auth: {
+  host: "http://lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu@la.residential.rayobyte.com",
+  port: 8000,
+  /*auth: {
     username: "lindafisher0252_gmail_com",
     password: "k2iaWLJ2xJDAJVu",
   },*/
