@@ -1,6 +1,5 @@
 import axios from "axios";
 import queryString from "query-string";
-import axios-proxy-conf
 
 /*const proxy = {
   host: "http://lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu@la.residential.rayobyte.com:8000",
