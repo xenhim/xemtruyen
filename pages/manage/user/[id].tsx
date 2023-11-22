@@ -28,16 +28,16 @@ const UserUpdate = () => {
   });
   const { onChange } = useInputChange(values, setValues);
   const { onChangeSelect } = useSelectChange(values, setValues);
-  useEffect(() => {
-    async function fetchUser() {
-      if (!id) return;
-      const colRef = doc(db, "users", id);
-      const docData = await getDoc(colRef);
-      const data = docData.data();
-      setValues({ ...values, ...data });
-    }
-    fetchUser();
-  }, [id]);
+useEffect(() => {
+  async function fetchUser() {
+    if (!id) return;
+    const colRef = doc(db, "users", id);
+    const docData = await getDoc(colRef);
+    const data = docData.data();
+    setValues({ ...values, ...data });
+  }
+  fetchUser();
+}, [id, values]);
   return (
     <CheckAdmin>
       <LayoutDashboard
