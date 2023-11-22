@@ -2,8 +2,12 @@ import axios from "axios";
 import queryString from "query-string";
 
 const proxy = {
-  host: "lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu",
+  host: "la.residential.rayobyte.com",
   port: 8000,
+  auth: {
+    username: "lindafisher0252_gmail_com",
+    password: "k2iaWLJ2xJDAJVu",
+  },
 };
 
 const axiosNhattruyen = axios.create({
