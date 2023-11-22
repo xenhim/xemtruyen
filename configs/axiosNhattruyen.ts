@@ -24,15 +24,17 @@ const proxyList = [
 ]; // Replace with your own list of proxies
 
 // Function to rotate through the list of proxies
-const rotateProxy = () => {
+const rotateProxy = (): { ip: string; port: string; } => {
   const proxy = proxyList.shift(); // Get the next available proxy
   proxyList.push(proxy); // Add the current proxy back to the end of the list
+
   return {
     protocol: "http",
     host: proxy.ip,
     port: proxy.port,
-  };
-}
+  } as { ip: string; port: string; };
+};
+
 
 // sd
 const axiosNhattruyen = axios.create({
