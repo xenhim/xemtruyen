@@ -1,7 +1,16 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const proxies = [
+
+interface Proxy {
+  protocol: string;
+  host: string;
+  port: number;
+  username: string;
+  password: string;
+}
+
+const proxies: Proxy[] = [
   {
     protocol: "http",
     host: "la.residential.rayobyte.com",
@@ -46,7 +55,7 @@ const proxies = [
   },
 ];
 
-function get_random_proxy(proxies) {
+function get_random_proxy(proxies: Proxy[]): Proxy {
   return proxies[Math.floor((Math.random() * proxies.length))];
 }
 
