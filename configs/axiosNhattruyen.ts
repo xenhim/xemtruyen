@@ -9,7 +9,6 @@ import queryString from "query-string";
     password: "k2iaWLJ2xJDAJVu",
   },
 };*/
-
     
 const axiosNhattruyen = axios.create({
   baseURL: "https://nhattruyenplus.com",
