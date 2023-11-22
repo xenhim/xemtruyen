@@ -39,8 +39,9 @@ const rotateProxy = (): { ip: string; port: string; } => {
     protocol: "http",
     host: proxy.ip,
     port: proxy.port,
-  };
+  } as { ip: string; port: string; };
 };
+
 
 const axiosNhattruyen = axios.create({
   baseURL: "https://nhattruyenplus.com",
