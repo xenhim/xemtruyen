@@ -23,7 +23,6 @@ const proxyList = [
   { ip: 'lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu-session-26e7a2b1@la.residential.rayobyte.com', port: '8000' },
 ]; // Replace with your own list of proxies
 
-// Function to rotate through the list of proxies
 const rotateProxy = (): { ip: string; port: string; } => {
   const proxy = proxyList.shift(); // Get the next available proxy
   proxyList.push(proxy); // Add the current proxy back to the end of the list
