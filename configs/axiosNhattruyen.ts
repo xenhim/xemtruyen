@@ -2,7 +2,7 @@ import axios from "axios";
 import queryString from "query-string";
 
 const axiosNhattruyen = axios.create({
-  baseURL: "https://worker-weathered-wave-3e1f.xemining.workers.dev"+`?url=${config.url}`
+  baseURL: "https://worker-weathered-wave-3e1f.xemining.workers.dev/?url=https://nhattruyenplus.com"
 });
 // dwwadw
 axiosNhattruyen.interceptors.request.use(
