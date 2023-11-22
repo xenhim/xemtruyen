@@ -76,11 +76,11 @@ const ReadComicPage = ({ imageUrls, chapters, info }: ReadComicPageProps) => {
     }
   };
 
-  useEffect(() => {
-    handleSaveHistory();
-    handleLevelUp();
-  }, [slug, chapter, id]);
+useEffect(() => {
+  handleSaveHistory();
+}, [handleSaveHistory, slug, chapter, id]);
 
+  
   const currentChapter = chapters.findIndex((chapter) => chapter.id === router.query.id);
   return (
     <>
