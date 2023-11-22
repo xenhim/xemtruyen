@@ -14,3 +14,5 @@ const axiosNhattruyen = axios.create({
   baseURL: "https://nhattruyenplus.com",
   proxy: proxy,
 });
+
+export default axiosNhattruyen;
