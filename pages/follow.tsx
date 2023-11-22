@@ -28,7 +28,7 @@ useEffect(() => {
   };
 
   fetchFollow();
-}, []);
+}, [follows]); // Add 'follows' to the dependency array
   return (
     <>
       <Meta
