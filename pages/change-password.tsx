@@ -76,7 +76,7 @@ const ChangePasswordPage = () => {
                   onChange={onChange}
                   required
                 />
-              </FormGroup>
+            </FormGroup>
               <Button type="submit" className="w-full h-10 mt-1 text-white bg-blue00">
                 Đổi mật khẩu
               </Button>
