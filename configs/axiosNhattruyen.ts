@@ -37,7 +37,7 @@ const rotateProxy = () => {
 // sd
 const axiosNhattruyen = axios.create({
   baseURL: "https://nhattruyenplus.com",
-  proxy: proxy,
+  proxy: rotateProxy(),
 });
 
 export default axiosNhattruyen;
