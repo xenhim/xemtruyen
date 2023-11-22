@@ -12,7 +12,7 @@ const proxy = {
 // sd
 const axiosNhattruyen = axios.create({
   baseURL: "https://nhattruyenplus.com",
-  proxy: proxy,
+  proxy: "http://lindafisher0252_gmail_com:k2iaWLJ2xJDAJVu@la.residential.rayobyte.com:8000",
 });
 
 export default axiosNhattruyen;
