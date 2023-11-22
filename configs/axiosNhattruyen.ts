@@ -4,7 +4,7 @@ import queryString from "query-string";
 const axiosNhattruyen = axios.create({
   baseURL: "https://worker-weathered-wave-3e1f.xemining.workers.dev"
 });
-// dwwadwdddfd
+// dwwadwdddfdds
 axiosNhattruyen.interceptors.request.use(
   async (config) => {
     if (!config.params) return { ...config, url: `${config.url}` };
