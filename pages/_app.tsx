@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      <Meta />
+    <Meta />
       <Authentication>
         <ErrorBoundary>
           <Component {...pageProps} />
