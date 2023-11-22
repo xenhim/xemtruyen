@@ -1,7 +1,7 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const proxy = {
+/*const proxy = {
   host: "la.residential.rayobyte.com",
   port: 8000,
   auth: {
@@ -9,6 +9,7 @@ const proxy = {
     password: "k2iaWLJ2xJDAJVu",
   },
 };
+*/
 // sd
 const axiosNhattruyen = axios.create({
   baseURL: "https://nhattruyenplus.com",
